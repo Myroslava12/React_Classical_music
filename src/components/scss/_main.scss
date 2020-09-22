@@ -1,0 +1,45 @@
+* {
+    font-size: 17px;
+}
+
+.dashboard--app {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(210, 182, 178, 0.5) 1.59%, rgba(81, 70, 125, 0) 75.41%), linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+}
+
+.container--app {
+    max-width: 1400px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.header--app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+.logo--box {
+    height: 100%;
+    flex-basis: 20%;
+    position: relative;
+
+    .logo--img {
+        object-fit: contain;
+        height: 85%;
+        transform: rotate(-10deg);
+        position: absolute;
+        top: 10%;
+    }
+
+    .logo--text {
+        font-family: $fontPoller;
+        font-size: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 12%;
+        transform: translateY(-50%);
+    }
+}

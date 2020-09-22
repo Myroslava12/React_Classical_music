@@ -1,0 +1,19 @@
+.nav--app {
+    display: flex;
+    justify-content: space-around;
+
+    li {
+        padding-left: 5rem;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+        
+        a {
+            color: $lightColor;
+        }
+    }
+}
+
+.active--link {
+    border-bottom: 1px solid $lightColor;
+    padding: 0 .5rem .5rem .5rem;
+}

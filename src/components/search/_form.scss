@@ -1,0 +1,54 @@
+.form--app {
+    position: absolute;
+    right: 3%;
+    top: 45%;
+    text-align: center;
+}
+
+.form--title {
+    font-family: $fontOpenSans;
+    font-size: 1.3rem;
+    width: 60%;
+    color: $lightColor;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+    line-height: 1.7rem;
+}
+
+.input--form {
+    border-radius: 1.5rem;
+    border: 0;
+    width: 500px;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+    box-shadow: 0px 4px 4px 0px #000000 25%;
+    background: rgba(0, 0, 0, 50);
+    border: 2px solid #F5EEE0;
+    color: $lightColor;
+}
+
+.input--form:focus {
+    box-shadow: 0px 0px 4px $lightColor;
+}
+
+.btn--form {
+   background-color: transparent;
+   border: 0;
+   margin-left: -3.5rem;
+   
+   .fa {
+       color: $lightColor;
+       font-size: 1.8rem;
+       transition: .1s;
+
+       &:hover {
+           transform: scale(1.1);
+       }
+   }
+}
+
+// @media (min-width: 1200px) and (max-width: 1399px) {
+//     .form--title {
+//         font-size: 1rem;
+//     }
+// }

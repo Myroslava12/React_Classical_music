@@ -1,0 +1,153 @@
+.main--app {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    position: relative;
+}
+
+.main--box {
+    width: 100%;
+    text-align: center;
+    padding-top: 8%;
+
+    .title--letter {
+        font-family: $fontPoller;
+        padding: 0 .2rem;
+        color: $darkColor;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 1;
+    }
+
+    .letter--1 {
+        font-size: 12rem;
+    }
+
+    .letter--2 {
+        font-size: 11.4rem;
+    }
+
+    .letter--3 {
+        font-size: 11.2rem;
+    }
+
+    .letter--4 {
+        font-size: 11rem;
+    }
+
+    .letter--5 {
+        font-size: 10.8rem;
+    }
+
+    .letter--6 {
+        font-size: 10.6rem;
+    }
+
+    .letter--7 {
+        font-size: 10.4rem;
+    }
+
+    .letter--8 {
+        font-size: 10.2rem;
+    }
+
+    .letter--9 {
+        font-size: 10rem;
+    }
+
+    .title--letter::before {
+        position: absolute;
+        color: $fontColor;
+        text-decoration: dotted;
+        font-family: $fontRaleway;
+    }
+
+    .letter--1::before {
+        content: "C";
+        top: 10%;
+        left: 10%;
+    }
+
+    .letter--2::before {
+        content: "L";
+        top: -10%;
+        left: -10%;
+    }
+
+    .letter--3::before {
+        content: "A";
+        top: 10%;
+        left: -5%;
+    }
+
+    .letter--4::before {
+        content: "S";
+        top: 5%;
+        left: 5%;
+    }
+
+    .letter--5::before {
+        content: "S";
+        top: -10%;
+        left: 15%;
+    }
+
+    .letter--6::before {
+        content: "I";
+        top: -10%;
+        left: 28%;
+    }
+
+    .letter--7::before {
+        content: "C";
+        top: 15%;
+        left: -5%;
+    }
+
+    .letter--8::before {
+        content: "A";
+        top: -5%;
+        left: 5%;
+    }
+
+    .letter--9::before {
+        content: "L";
+        top: 15%;
+        left: -5%;
+    }
+}
+
+.main--title {
+    font-family: $fontPoller;
+    font-size: 3rem;
+    color: $darkColor;
+    text-align: end;
+}
+
+.main--img {
+    position: absolute;
+    object-fit: cover;
+    left: -5%;
+    bottom: 5%;
+    width: 60%;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    * {
+        font-size: 10px;
+    }
+
+    .main--box {
+        padding-top: 4%;
+    }
+
+    .main--img {
+        bottom: 3%;
+        left: 2%;
+        width: auto;
+    }
+
+    .header--app {
+        padding: 0 1rem;
+    }
+}
