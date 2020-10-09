@@ -1,0 +1,256 @@
+.favorites--dashboard {
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100vh - 5rem);
+    z-index: 3;
+    
+    
+}
+
+.favorite--title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 500;
+    color: $lightColor;
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0px 0px 1.2px $lightColor;
+}
+
+.favorite--list {
+    width: 100%;
+    height: auto;
+    background-image: url(../../images/favorites-bg.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+    padding: 1rem 0 2rem 0;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(210, 182, 178, 0.5) 1.59%, rgba(81, 70, 125, 0) 75.41%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+        z-index: 1;
+    }
+}
+
+.favorite--work--box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 1rem 2rem;
+    margin: 3rem 0 0 0;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+}
+
+.img--box {
+    flex-basis: 40%;
+    z-index: 3;
+
+    .composer--img {
+        width: 60%;
+        height: 300px;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+
+        img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+        }
+    }
+}
+
+.favorite--logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 60%;
+    padding: 1rem 0;
+
+    .favorite--logo--title {
+        color: $lightColor;
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: $fontRaleway;
+        flex-basis: 70%;
+    }
+
+    .player--logo {
+        width: 3px;
+        margin: 0 .2rem;
+        background-color: $lightColor;
+        border-radius: 6px 6px 0px 0px;
+    }
+
+    .player--1 {
+        height: 25px;
+    }
+
+    .player--2 {
+        height: 31px;
+    }
+
+    .player--3 {
+        height: 39px;
+    }
+
+    .player--4 {
+        height: 43px;
+    }
+}
+
+.favorite--composer--info {
+    flex-basis: 60%;
+    align-self: flex-start;
+    text-align: center;
+    z-index: 3;
+    color: $lightColor;
+    font-family: $fontOpenSans;
+
+    .favorite--composer--name {
+        margin-top: 3rem;
+        padding-bottom: 2rem;
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+    .favorite--work--title {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        padding-bottom: 2rem;
+    }
+
+    .favorite--btn {
+        border: 0;
+        outline: none;
+        background-color: $fontColor;
+        color: $lightColor;
+        padding: 1rem 2rem;
+        margin: 2rem 0;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 3px $fontColor;
+        transition: .1s;
+
+        &:hover {
+            box-shadow: 0px 0px 5px $fontColor;
+            transform: scale(1.05);
+        }
+    }
+}
+
+@media #{$tableScreen} {
+    .img--box {
+        .composer--img {
+            width: 90%;
+        }
+    }
+
+    .favorite--logo {
+        width: 90%;
+    }
+}
+
+@media #{$laptopScreen} {
+    .img--box {
+        .composer--img {
+            width: 70%;
+        }
+    }
+
+    .favorite--logo {
+        width: 70%;
+    }
+
+    .favorite--player {
+        margin: 0 auto;
+    }
+}
+
+@media #{$mobileLargeScreen} {
+    .img--box {
+        .composer--img {
+            width: 100%;
+        }
+    }
+
+    .favorite--logo {
+        width: 100%;
+    }
+
+    .favorite--composer--info {
+        align-self: center;
+    }
+
+    .favorite--title {
+        margin: 6rem 0 4rem 0;
+    }
+}
+
+@media #{$mobileScreen} {
+    .favorite--work--box {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img--box {
+        width: 100%;
+
+        .composer--img {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    .favorite--logo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .favorite--composer--info {
+        align-self: center;
+
+        .favorite--composer--name {
+            font-size: 3.5rem;
+            line-height: 4rem;
+            margin-top: 4rem;
+        }
+
+        .favorite--work--title {
+            font-size: 3rem;
+            line-height: 3.4rem;
+            margin: 3rem 0;
+        }
+
+        .favorite--btn {
+            padding: 1.4rem 3rem;
+            font-size: 2.4rem;
+        }
+    }
+
+    .favorite--title {
+        margin: 7rem 0 5rem 0;
+        font-size: 3rem;
+        line-height: 3.4rem;
+    }
+}

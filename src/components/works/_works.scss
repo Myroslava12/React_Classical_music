@@ -1,0 +1,252 @@
+.form--search--works {
+    position: absolute;
+    padding: 1rem;
+    width: 50%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $lightColor;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px $lightColor;
+}
+
+.form--icon--hide {
+    margin: 0 0 0 auto;
+    
+    i {
+        font-size: 2rem;
+        color: $darkColor;
+        cursor: pointer;
+    }
+}
+
+.search--work--title {
+    font-size: 2.6rem;
+    color: $darkColor;
+    line-height: 3rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.search--title--error {
+    color: rgb(138, 0, 0);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: $fontOpenSans;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+.input--search--work {
+    outline: none;
+    display: block;
+    border: 2px solid $fontColor;
+    color: rgba(0, 0, 0, .4);
+    padding: 1.2rem 1.5rem;
+    width: 50%;
+    font-size: 1rem;
+    border-radius: 1rem;
+
+    &:focus {
+        box-shadow: 0px 0px 4px $fontColor;
+    }
+}
+
+.btn--search--work {
+    border: 0;
+    padding: 1rem 2rem;
+    background-color: $fontColor;
+    color: $lightColor;
+    margin: 3rem 0;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+
+    &:hover {
+        opacity: .7;
+        color: $darkColor;
+    }
+}
+
+.section--works {
+    flex-basis: 100%;
+    margin: 3rem 0;
+    background-image: url(../../images/keyboard.png);
+    background-size: cover;
+    background-position: center right;
+    color: $fontColor;
+    position: relative;
+    max-height: 1000px;
+    overflow: auto;
+    box-shadow: 0 0 6px $darkColor;
+}
+
+.list--works {
+    padding: 2rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+}
+
+.work--box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem 0;
+    z-index: 3;
+
+    .work--title {
+        color: $lightColor;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-family: $fontOpenSans;
+        z-index: 2;
+        transition: .1s;
+        flex-basis: 75%;
+
+        &:hover {
+            color: $fontColor;
+            transform: scale(1.01);
+        }
+    }
+}
+
+.work--icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+
+    button {
+        outline: none;
+        border: 0;
+        font-size: 2.2rem;
+        margin: 0 1rem;
+        border-radius: 1rem;
+        transition: .1s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .fa {
+        color: $lightColor;
+        padding: .5rem 1rem;
+    }
+
+    .btn--add--work {
+        background-color: $lightColor;
+
+        .fa {
+            color: rgb(226, 86, 86);
+        }
+    }
+
+    .btn--yt--player {
+        background-color: red;
+    }
+}
+
+.work--video {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    margin: 2rem 0rem 2rem 0rem;
+    padding: 2rem 0;
+    position: relative;
+
+    .video--player {
+        height: 400px;
+        width: 70%;
+    }
+
+    .work--video--hide {
+        position: absolute;
+        top: 0;
+        color: $fontColor;
+        right: 15%;
+        cursor: pointer;
+        transition: .1s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        i {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media #{$mobileScreen} {
+    .work--box {
+        .work--title {
+            flex-basis: 60%;
+        }
+    }
+
+    .form--search--works  {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .work--box {
+        .work--title, .work--icons {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .work--title {
+            font-size: 2.4rem;
+        }
+
+        .work--icons {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+    }
+}
+
+@media #{$tableScreen} {
+    .form--search--works {
+        width: 70%;
+    }
+
+    .work--box {
+        .work--title {
+            flex-basis: 60%;
+        }
+    }
+}
+
+@media #{$mobileLargeScreen} {
+    .work--video {
+        .video--player {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .work--video--hide {
+            right: 5%;
+        }
+    }
+}
+
+@media #{$mobileScreen} {
+    .work--video {
+        .video--player {
+            height: 300px;
+            width: 100%;
+        }
+
+        .work--video--hide {
+            right: 0;
+        }
+    }
+}

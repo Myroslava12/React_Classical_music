@@ -1,0 +1,174 @@
+.section--composers {
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+    top: 100vh;
+    left: 0;
+    position: absolute;
+}
+
+.composer--container {
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 0; 
+    margin-bottom: 2rem;  
+    position: relative;
+}
+
+.box--composer {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    background-color: white;
+    background: linear-gradient(122.66deg, rgba(139, 139, 139, 0.5) 44.47%, rgba(87, 87, 87, 0.849334) 58.85%, rgba(73, 72, 72, 0.904) 63.36%, rgba(53, 53, 53, 0.952221) 67.66%, rgba(42, 41, 41, 0.982183) 73.02%, #212121 82.85%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+    margin: 1rem 0;
+    position: relative;
+}
+
+.section--title {
+    font-family: $fontOpenSans;
+    font-size: 3rem;
+    color: $fontColor;
+    text-align: center;
+    padding: 2rem 0 3rem 0;
+}
+
+.section--img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.composer--portrait {
+    flex-basis: 25%;
+    background-color: $lightColor;
+    height: auto;
+    margin-top: 6rem;
+    z-index: 2;
+    border-radius: 1rem;
+    margin-left: 3rem;
+
+    img {
+        padding: 1rem;
+        width: 90%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.composer--bg-img {
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    background-image: url(../../images/notes.jpg);
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
+        opacity: .6;
+    }
+}
+
+.composer--info {
+    flex-basis: 30%;
+    padding: 2rem 0 1.5rem 0;
+    background-color: $lightColor;
+    text-align: center;
+    z-index: 2;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-left: -4rem;
+
+    .composer--name {
+        color: $fontColor;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .composer--birth, .composer--epoch {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: $darkColor;
+    }
+
+    .composer--birth {
+        font-weight: bold;
+    }
+
+    .composer--epoch {
+        margin: 3rem 0 2rem 0;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+
+    .composer--btn {
+        border: 0;
+        color: $lightColor;
+        background-color: $fontColor;
+        outline: 0;
+        font-size: 1.5rem;
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        transition: .1s;
+
+        &:hover {
+            color: $darkColor;
+            opacity: .7;
+        }
+    }
+}
+
+.hide--section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 3;
+}
+
+@media #{$mobileScreen}, #{$mobileLargeScreen}, #{$tableScreen} {
+    .section--img {
+        width: 70%;
+    }
+
+    .section--title {
+        z-index: 4;
+        position: relative;
+    }
+}
+
+@media #{$mobileScreen} {
+    .composer--container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .composer--info {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+
+    .composer--bg-img {
+        display: none;
+    }
+
+    .composer--portrait {
+        width: 70%;
+
+        img {
+            width: 95%;
+            margin: 0 auto;
+        }
+    }
+}

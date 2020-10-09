@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import piano from '../../images/piano.png';
-import Form from './Form';
+import FormSearchComposers from './FormSearchComposers';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
-const Search = () => {
+const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisible, setWorks}) => {
+
+    useEffect(() => {
+        AOS.init({
+          duration : 500
+        });
+      }, []);
 
     return (
         <div className="main--app">
@@ -19,8 +27,15 @@ const Search = () => {
                 <span className="title--letter letter--9">l</span>
                 <h3 className="main--title">music</h3>
             </div>
-            <img className="main--img" src={piano} />
-            <Form />
+            <img className="main--img" src={piano} data-aos="fade-up" data-aos-anchor-placement="top-bottom" />
+            <FormSearchComposers 
+                composers={composers}
+                setComposers={setComposers}
+                inputSearch={inputSearch}
+                setInputSearch={setInputSearch}
+                setIsVisible={setIsVisible}
+                setWorks={setWorks}
+            />
         </div>
     )
 };

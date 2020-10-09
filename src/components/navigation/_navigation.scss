@@ -13,7 +13,107 @@
     }
 }
 
+.navbar--app {
+    display: none;
+}
+
 .active--link {
     border-bottom: 1px solid $lightColor;
     padding: 0 .5rem .5rem .5rem;
+}
+
+.navbar--icon--btn {
+    border: 0;
+    outline: none;
+    margin-right: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    transition: .1s;
+    position: relative;
+    z-index: 5;
+
+    .fa {
+        color: $darkColor;
+        font-size: 5rem;
+    }
+
+    .fa-times {
+        color: $lightColor;
+        font-size: 3.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.mobile--nav--app {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 4;
+    padding: 6rem 0;
+    width: 100%;
+    text-align: center;
+    animation: navbar 1s;
+
+    li {
+        margin: 3rem 0;
+
+        a {
+            font-size: 2.5rem;
+            color: $lightColor;
+        }
+    }
+}
+
+.mobile--nav--hide {
+    animation: navbarHide 1.5s 1.5s;
+}
+
+@keyframes navbar {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes navbarHide {
+    0% {
+        right: 0%;
+    }
+    100% {
+        right: -50%;
+    }
+}
+
+@media #{$mobileScreen} {
+    html {
+        font-size: 8px;
+    }
+    
+    .nav--app {
+        display: none;
+    }
+
+    .navbar--app {
+        display: block;
+    }
+}
+
+@media #{$mobileLargeScreen} {
+    html {
+        font-size: 10px;
+    }
+
+    .nav--app {
+        display: none;
+    }
+
+    .navbar--app {
+        display: block;
+    }
 }
