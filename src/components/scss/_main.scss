@@ -74,6 +74,10 @@ html {
         padding: 0 1rem;
         height: 10rem;
     }
+
+    .dashboard--app {
+        min-height: 550px;
+    }
 }
 
 @media (max-width: 420px) {

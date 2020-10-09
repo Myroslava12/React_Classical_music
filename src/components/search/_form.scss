@@ -64,6 +64,12 @@
     }
 }
 
+@media (max-width: 420px) {
+    .input--form {
+        width: 80%;
+    }
+}
+
 @media #{$mobileLargeScreen} {
     .form--title {
         font-size: 1.5rem;
@@ -75,5 +81,9 @@
 @media #{$tableScreen} {
     .form--title {
         font-size: 1rem;
+    }
+
+    .input--form {
+        width: 85%;
     }
 }
