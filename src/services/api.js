@@ -24,8 +24,7 @@ export const getComposersByWorks = async (id, name) => {
 }
 
 export const getVideoFromYoutube = async (name, title) => {
-    const key = "AIzaSyALeIX6U8_icC1lS-leiWjH5qPkBlvQHfA";
-    const urlAPI = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${name}${title}&maxResult=1&key=${key}`;
+    const urlAPI = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${name}${title}&maxResult=1&key=${process.env.REACT_APP_YOUTUBE_KEY}`;
 
     try {
         const response = await fetch(urlAPI);
