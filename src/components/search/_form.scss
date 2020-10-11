@@ -34,7 +34,7 @@
 .btn--form {
    background-color: transparent;
    border: 0;
-   margin-left: -3.5rem;
+   margin-left: -3.5rem;                                                     
    
    .fa {
        color: $lightColor;
@@ -45,6 +45,10 @@
            transform: scale(1.1);
        }
    }
+}
+
+.box--loading {
+    position: relative;
 }
 
 @media #{$mobileScreen}, #{$mobileLargeScreen} {

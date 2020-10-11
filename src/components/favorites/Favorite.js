@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { getVideoFromYoutube } from "../../services/api";
 import Video from "../works/Video";
+import Loading from "../loading/Loading";
 
 const Favorite = ({work}) => {
     const [show, setShow] = useState(false);
     const [videoKey, setVideoKey] = useState('');
-
+    const [done, setDone] = useState(false);
     const showFavoriteVideoFromYoutube = async () => {
+        setDone(true);
         const video = await getVideoFromYoutube(work.name, work.title);
         setVideoKey(video.id.videoId);
         setShow(true);
+        setDone(false);
     }
     return (
         <div className="favorite--work--box" key={work.id}>
@@ -35,6 +38,7 @@ const Favorite = ({work}) => {
             <div className="favorite--composer--info">
                 <h2 className="favorite--composer--name">{work.name}</h2>
                 <h3 className="favorite--work--title">{work.title}</h3>
+                <div className="box--loading">{done && <Loading />}</div>
                 <button onClick={showFavoriteVideoFromYoutube} className="favorite--btn">Listen work</button>
             </div>
             {show && <Video videoKey={videoKey} setShow={setShow} />}

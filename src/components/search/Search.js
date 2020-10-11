@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import piano from '../../images/piano.png';
 import FormSearchComposers from './FormSearchComposers';
 import AOS from 'aos';
@@ -15,7 +15,7 @@ const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisi
 
     return (
         <div className="main--app">
-            <div className="main--box">
+            <div className="main--box" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 <span className="title--letter letter--1">C</span>
                 <span className="title--letter letter--2">l</span>
                 <span className="title--letter letter--3">a</span>
@@ -27,7 +27,7 @@ const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisi
                 <span className="title--letter letter--9">l</span>
                 <h3 className="main--title">music</h3>
             </div>
-            <img className="main--img" src={piano} data-aos="fade-up" data-aos-anchor-placement="top-bottom" />
+            <img className="main--img" src={piano} />
             <FormSearchComposers 
                 composers={composers}
                 setComposers={setComposers}

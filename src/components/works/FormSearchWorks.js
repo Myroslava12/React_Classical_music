@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import { getComposersByWorks } from "../../services/api";
+import Loading from "../loading/Loading";
 
 
 const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
     const [nameWork, setNameWork] = useState("");
     const [inputError, setInputError] = useState(false);
     const [error, setError] =  useState(false);
+    const [done, setDone] = useState(false);
+
     const searchWorks = async () => {
+        setDone(true);
         const works = await getComposersByWorks(composerID, nameWork);
         if (works.length !== 0) {
             setWorks(works);
             setIsVisible(false);
+            setDone(false);
         } else {
             setError(true);
             setInputError(false);
+            setDone(false);
         }
     }
 
@@ -24,6 +30,7 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
             setInputError(true);
             setError(false);
         }} >
+            {done && <Loading />}
             <div className="form--icon--hide"><i className="fa fa-times" onClick={hideSection}></i></div>
             <h2 className="search--work--title">What works do you want to find</h2>
             {inputError && <h2 className="search--title--error">Field value cannot be empty</h2>}
