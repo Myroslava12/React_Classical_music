@@ -42,10 +42,10 @@ function App() {
       <div className="dashboard--app">
         <div className="container--app container--search">
           <div className="header--app">
-            <div className="logo--box">
+            <a className="logo--box" href="/">
               <img className="logo--img" src={logo}/>
               <span className="logo--text">ClassicalApp</span>
-            </div>
+            </a>
             <Router>
               <Navigation />
               <Switch>
