@@ -6,16 +6,19 @@ import Loading from "../loading/Loading";
 const Favorite = ({work}) => {
     const [show, setShow] = useState(false);
     const [videoKey, setVideoKey] = useState('');
-    const [done, setDone] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const showFavoriteVideoFromYoutube = async () => {
-        setDone(true);
+        setIsLoading(true);
         const video = await getVideoFromYoutube(work.name, work.title);
+        setIsLoading(false);
+        if (!video) {
+            return;
+        }
         setVideoKey(video.id.videoId);
         setShow(true);
-        setDone(false);
     }
-    
+
     return (
         <div className="favorite--work--box" key={work.id}>
             <div className="img--box">
@@ -38,9 +41,9 @@ const Favorite = ({work}) => {
                 </div>
             </div>
             <div className="favorite--composer--info">
-                <h2 className="favorite--composer--name">{work.name}</h2>
-                <h3 className="favorite--work--title">{work.title}</h3>
-                <div className="box--loading">{done && <Loading />}</div>
+                <p className="favorite--composer--name">{work.name}</p>
+                <p className="favorite--work--title">{work.title}</p>
+                <div className="box--loading">{isLoading && <Loading />}</div>
                 <button onClick={showFavoriteVideoFromYoutube} className="favorite--btn">Listen work</button>
             </div>
             {show && <Video videoKey={videoKey} setShow={setShow} />}

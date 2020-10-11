@@ -6,6 +6,8 @@ const Composer = ({composer}) => {
     const [isVisible, setIsVisible] = useState(false);
     const [works, setWorks] = useState([]);
 
+    const onClick = () => setIsVisible(true);
+
     return (
         <div className="box--composer">
             <div className="container--app">
@@ -15,7 +17,7 @@ const Composer = ({composer}) => {
                         <h2 className="composer--name">{composer.name}</h2>
                         <span className="composer--birth">{composer.birth} - {composer.death}</span>
                         <p className="composer--epoch">The era in which he created: <strong>{composer.epoch}</strong></p>
-                        <button onClick={() => setIsVisible(true)} className="composer--btn">Search works</button>
+                        <button onClick={onClick} className="composer--btn">Search works</button>
                     </div>
                     <div className="composer--bg-img"></div>
                     <div className="composer--portrait">

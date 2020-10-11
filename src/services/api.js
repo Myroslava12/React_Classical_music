@@ -4,10 +4,9 @@ export const getComposersByName = async (name) => {
         const response = await fetch(urlAPI);
         const result = await response.json();
         return (result.status.success === "true") ? result.composers : [];
-        // return result.composers;
     } catch (err) {
         console.log(err);
-        return err;
+        return [];
     }
 }
 
@@ -33,7 +32,6 @@ export const getVideoFromYoutube = async (name, title) => {
         const result = await response.json();
         return result.items[0];
     } catch (err) {
-        console.log(err);
-        return [];
+        return;
     }
 }

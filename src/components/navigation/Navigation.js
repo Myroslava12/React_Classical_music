@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import {HashRouter as Router, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Navigation = () => {
     const [showNav, setShowNav] = useState(false);
 
-    const showNavbar = () => setShowNav(prev => !prev);
+    const showNavbar = () => setShowNav(!showNav);
 
     return (
         <nav>
@@ -16,7 +16,7 @@ const Navigation = () => {
             </ul>
             <div className="navbar--app">
             <button onClick={showNavbar} className="navbar--icon--btn">
-                {(showNav !== true) ? <i className="fa fa-bars"></i> : <i className="fa fa-times"></i>}
+                {showNav ? <i className="fa fa-times" /> : <i className="fa fa-bars" />}
             </button>
             {showNav && <ul className={showNav ?  "mobile--nav--app" : "mobile--nav--app mobile--nav--hide"}>
                 <li><NavLink onClick={showNavbar} exact to="/" activeClassName="active--link">Home</NavLink></li>

@@ -4,7 +4,7 @@ import Loading from '../loading/Loading';
 
 const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWorks}) => {
     const [error, setError] = useState(false);
-    const [done, setDone] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -12,8 +12,9 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
             return;
         }
 
-        setDone(true);
+        setIsLoading(true);
         const composersFromAPI = await getComposersByName(inputSearch);
+        setIsLoading(false);
         if (composersFromAPI.length !== 0) {
             setComposers(composersFromAPI.map(composer => ({
                 id: composer.id,
@@ -26,22 +27,22 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
             setInputSearch('');
             setWorks([]);
             setError(false);
-            setDone(false);
         } else {
             setError(true);
-            setDone(false);
         }  
     }
+
+    const onChange = (e) => setInputSearch(e.target.value);
 
     return (
         <form onSubmit={handleSubmit} className="form--app" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <h1 className="form--title">WHAT YOU DON’T KNOW ABOUT YOUR FAVES COMPOSER?</h1>
-            <div className="box--loading">{done && <Loading />}</div>
-            {error && <h2 className="search--title--error">No composers found</h2>}
+            <div className="box--loading">{isLoading && <Loading />}</div>
+            {error && <p className="search--title--error">No composers found</p>}
             <div className="form--box">
                 <input 
                     value={inputSearch} 
-                    onChange={(e) => setInputSearch(e.target.value)} 
+                    onChange={onChange} 
                     className="input--form" type="text" 
                     placeholder="Ludwig van Beethoven" 
                 />
