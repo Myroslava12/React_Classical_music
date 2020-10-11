@@ -7,6 +7,7 @@ const Favorite = ({work}) => {
     const [show, setShow] = useState(false);
     const [videoKey, setVideoKey] = useState('');
     const [done, setDone] = useState(false);
+
     const showFavoriteVideoFromYoutube = async () => {
         setDone(true);
         const video = await getVideoFromYoutube(work.name, work.title);
@@ -14,6 +15,7 @@ const Favorite = ({work}) => {
         setShow(true);
         setDone(false);
     }
+    
     return (
         <div className="favorite--work--box" key={work.id}>
             <div className="img--box">

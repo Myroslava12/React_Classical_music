@@ -8,6 +8,10 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (inputSearch.length === 0) {
+            return;
+        }
+
         setDone(true);
         const composersFromAPI = await getComposersByName(inputSearch);
         if (composersFromAPI.length !== 0) {
@@ -30,7 +34,7 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
     }
 
     return (
-        <form onSubmit={(inputSearch.length !== 0) ? handleSubmit : null} className="form--app" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <form onSubmit={handleSubmit} className="form--app" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <h1 className="form--title">WHAT YOU DON’T KNOW ABOUT YOUR FAVES COMPOSER?</h1>
             <div className="box--loading">{done && <Loading />}</div>
             {error && <h2 className="search--title--error">No composers found</h2>}

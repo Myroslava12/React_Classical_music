@@ -11,6 +11,12 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
 
     const searchWorks = async (e) => {
         e.preventDefault();
+        if ((nameWork.length === 0)) {
+            setInputError(true);
+            setError(false);
+            return;
+        }
+
         setDone(true);
         const works = await getComposersByWorks(composerID, nameWork);
         if (works.length !== 0) {
@@ -27,10 +33,7 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
     const hideSection = () => setIsVisible(false);
 
     return (
-        <form className="form--search--works" onSubmit={(nameWork.length !== 0) ? searchWorks : () => {
-            setInputError(true);
-            setError(false);
-        }} >
+        <form className="form--search--works" onSubmit={searchWorks}>
             {done && <Loading />}
             <div className="form--icon--hide"><i className="fa fa-times" onClick={hideSection}></i></div>
             <h2 className="search--work--title">What works do you want to find</h2>
