@@ -6,7 +6,8 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
     const [error, setError] = useState(false);
     const [done, setDone] = useState(false);
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         setDone(true);
         const composersFromAPI = await getComposersByName(inputSearch);
         if (composersFromAPI.length !== 0) {
@@ -39,7 +40,7 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
                 className="input--form" type="text" 
                 placeholder="Ludwig van Beethoven" 
             />
-            <button className="btn--form"><i className="fa fa-search"></i></button>
+            <button type="submit" className="btn--form"><i className="fa fa-search"></i></button>
         </form>
     )
 }
