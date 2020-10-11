@@ -34,7 +34,7 @@
 .btn--form {
    background-color: transparent;
    border: 0;
-   margin-left: -3.5rem;                                                     
+   margin-left: -3.5rem;                                                    
    
    .fa {
        color: $lightColor;
@@ -49,6 +49,11 @@
 
 .box--loading {
     position: relative;
+}
+
+.form--box {
+    display: flex;
+    align-items: center;
 }
 
 @media #{$mobileScreen}, #{$mobileLargeScreen} {

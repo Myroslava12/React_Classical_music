@@ -9,7 +9,8 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
     const [error, setError] =  useState(false);
     const [done, setDone] = useState(false);
 
-    const searchWorks = async () => {
+    const searchWorks = async (e) => {
+        e.preventDefault();
         setDone(true);
         const works = await getComposersByWorks(composerID, nameWork);
         if (works.length !== 0) {
