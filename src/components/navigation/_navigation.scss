@@ -52,25 +52,32 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .8);
     z-index: 4;
-    padding: 6rem 0;
     width: 100%;
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     animation: navbar 1s;
 
     li {
-        margin: 3rem 0;
+        margin: 2.3rem 0;
 
         a {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             color: $lightColor;
         }
     }
 }
 
+// .mobile--nav--show {
+//     animation: navbar 1s;
+// }
+
 .mobile--nav--hide {
-    animation: navbarHide 1.5s 1.5s;
+    animation: navbarHide 1s;
 }
 
 @keyframes navbar {
@@ -87,7 +94,7 @@
         right: 0%;
     }
     100% {
-        right: -50%;
+        right: -100%;
     }
 }
 

@@ -4,7 +4,9 @@ import {NavLink} from 'react-router-dom';
 const Navigation = () => {
     const [showNav, setShowNav] = useState(false);
 
-    const showNavbar = () => setShowNav(!showNav);
+    const showNavbar = () => {
+        setShowNav(!showNav);
+    };
 
     return (
         <nav>
@@ -18,7 +20,7 @@ const Navigation = () => {
             <button onClick={showNavbar} className="navbar--icon--btn">
                 {showNav ? <i className="fa fa-times" /> : <i className="fa fa-bars" />}
             </button>
-            {showNav && <ul className={showNav ?  "mobile--nav--app" : "mobile--nav--app mobile--nav--hide"}>
+            {showNav && <ul className="mobile--nav--app">
                 <li><NavLink onClick={showNavbar} exact to="/" activeClassName="active--link">Home</NavLink></li>
                 <li><NavLink onClick={showNavbar} to="/about/app" activeClassName="active--link">About App</NavLink></li>
                 <li><NavLink onClick={showNavbar} to="/about/favorites" activeClassName="active--link">Favorites</NavLink></li>
