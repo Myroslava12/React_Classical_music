@@ -1,25 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React, { useRef, useState} from 'react';
 import Video from "./Video";
 import {getVideoFromYoutube} from "../../services/api";
 import { getFavoritesFromLocalStorage, setFavoritesToLocalStorage } from "../../services/favorites";
 import Loading from '../loading/Loading';
+import { scrollToRef } from "../../services/scroll";
 
 const Work = ({work, composerName, composerImg}) => {
     const [videoKey, setVideoKey] = useState('');
     const [show, setShow] = useState(false);
     const [isAdded, setIsAdded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [videoNotFound, setVideoNotFound] = useState(false);
+
+    const myRef = useRef();
 
     const showVideoFromYoutube = async () => {
         setIsLoading(true);
         const video = await getVideoFromYoutube(composerName, work.title);
         setIsLoading(false);
         if (!video) {
+            setVideoNotFound(true);
             return;
         }
         setVideoKey('');
         setVideoKey(video.id.videoId);
         setShow(true);
+        setVideoNotFound(false);
+        scrollToRef(myRef);
     }
 
     const addToFavorites = () => {
@@ -35,7 +42,8 @@ const Work = ({work, composerName, composerImg}) => {
                 <button disabled={isAdded && true} onClick={addToFavorites} className="btn--add--work">{!isAdded ? <i className="fa fa-heart"></i> : <i className="fa fa-check"></i>}</button>
                 <button onClick={showVideoFromYoutube} className="btn--yt--player">{isLoading && <Loading />}<i className="fa fa-youtube"></i></button>
             </div>
-            {show && <Video videoKey={videoKey} setShow={setShow} />}
+            {videoNotFound && <p className="work--not--found">Video not found</p>}
+            {show && <Video videoKey={videoKey} setShow={setShow} myRef={myRef} />}
         </li>
     )
 }

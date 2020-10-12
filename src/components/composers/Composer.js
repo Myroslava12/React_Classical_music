@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Works from "../works/Works";
 import FormSearchWorks from "../works/FormSearchWorks";
 
@@ -7,6 +7,8 @@ const Composer = ({composer}) => {
     const [works, setWorks] = useState([]);
 
     const onClick = () => setIsVisible(true);
+
+    const myRef = useRef();
 
     return (
         <div className="box--composer">
@@ -29,6 +31,7 @@ const Composer = ({composer}) => {
                             composerID={composer.id}
                             setWorks={setWorks}
                             composer={composer}
+                            myRef={myRef}
                         />
                     }
                 </div>
@@ -36,6 +39,7 @@ const Composer = ({composer}) => {
                     works={works} 
                     composerName={composer.name} 
                     composerImg={composer.img} 
+                    myRef={myRef}
                 />}
             </div>
         </div>

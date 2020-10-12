@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisible, setWorks}) => {
+const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisible, setWorks, myRef}) => {
 
     useEffect(() => {
         AOS.init({
@@ -35,6 +35,7 @@ const Search = ({composers, setComposers, inputSearch, setInputSearch, setIsVisi
                 setInputSearch={setInputSearch}
                 setIsVisible={setIsVisible}
                 setWorks={setWorks}
+                myRef={myRef}
             />
         </div>
     )

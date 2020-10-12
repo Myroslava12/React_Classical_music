@@ -1,12 +1,12 @@
 import React from "react";
 import ReactPlayer from 'react-player/youtube';
 
-const Video = ({videoKey, setShow}) => {
+const Video = ({videoKey, setShow, myRef, myFavRef}) => {
 
     const onClick = () => setShow(false);
 
     return (
-        <div className="work--video">
+        <div className="work--video" ref={myRef} ref={myFavRef}>
             <div className="work--video--hide"><i className="fa fa-times" onClick={onClick}></i></div>
             <div className="video--player">
                 <ReactPlayer

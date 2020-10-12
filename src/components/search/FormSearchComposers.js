@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {getComposersByName} from '../../services/api';
 import Loading from '../loading/Loading';
+import {scrollToRef} from "../../services/scroll";
 
-const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWorks}) => {
+const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWorks, myRef}) => {
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +28,7 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
             setInputSearch('');
             setWorks([]);
             setError(false);
+            scrollToRef(myRef);
         } else {
             setError(true);
         }  

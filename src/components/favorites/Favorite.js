@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { getVideoFromYoutube } from "../../services/api";
 import Video from "../works/Video";
 import Loading from "../loading/Loading";
+import { scrollToRef } from "../../services/scroll";
 
 const Favorite = ({work}) => {
     const [show, setShow] = useState(false);
     const [videoKey, setVideoKey] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [videoNotFound, setVideoNotFound] = useState(false);
+
+    const myRef = useRef();
+    const myRefNotFound = useRef();
 
     const showFavoriteVideoFromYoutube = async () => {
         setIsLoading(true);
         const video = await getVideoFromYoutube(work.name, work.title);
         setIsLoading(false);
+
         if (!video) {
+            setVideoNotFound(true);
+            scrollToRef(myRefNotFound);
             return;
         }
         setVideoKey(video.id.videoId);
         setShow(true);
+        scrollToRef(myRef);
     }
 
     return (
@@ -46,7 +55,8 @@ const Favorite = ({work}) => {
                 <div className="box--loading">{isLoading && <Loading />}</div>
                 <button onClick={showFavoriteVideoFromYoutube} className="favorite--btn">Listen work</button>
             </div>
-            {show && <Video videoKey={videoKey} setShow={setShow} />}
+            {videoNotFound && <p ref={myRefNotFound} className="work--not--found">Video not found</p>}
+            {show && <Video videoKey={videoKey} setShow={setShow} myFavRef={myRef} />}
         </div>
     )
 }

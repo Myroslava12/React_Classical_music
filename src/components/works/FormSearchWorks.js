@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { getComposersByWorks } from "../../services/api";
 import Loading from "../loading/Loading";
+import {scrollToRef} from "../../services/scroll";
 
 
-const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
+const FormSearchWorks  = ({setWorks, setIsVisible, composerID, myRef}) => {
     const [nameWork, setNameWork] = useState("");
     const [inputError, setInputError] = useState(false);
     const [error, setError] =  useState(false);
@@ -23,6 +24,7 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID}) => {
             setWorks(works);
             setIsVisible(false);
             setDone(false);
+            scrollToRef(myRef)
         } else {
             setError(true);
             setInputError(false);

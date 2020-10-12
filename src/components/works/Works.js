@@ -1,10 +1,10 @@
 import React from 'react';
 import Work from "./Work";
 
-const Works = ({works, composerName, composerImg}) => {
+const Works = ({works, composerName, composerImg, myRef}) => {
     
     return (
-        <div className="section--works">
+        <div className="section--works" ref={myRef}>
             <ul className="list--works">
                 {works.map(work => {
                     return <Work 

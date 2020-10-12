@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navigation from './navigation/Navigation';
 import AboutApp from './about_app/AboutApp';
@@ -13,6 +13,8 @@ const Home = () => {
   const [inputSearch, setInputSearch] = useState('');
   const [composers, setComposers] = useState([]);
   const [works, setWorks] = useState([]);
+
+  const myRef = useRef();
   
   return (
     <>
@@ -22,6 +24,7 @@ const Home = () => {
         inputSearch={inputSearch}
         setInputSearch={setInputSearch}
         setWorks={setWorks}
+        myRef={myRef}
       />
       <div>
         <Composers 
@@ -29,6 +32,7 @@ const Home = () => {
           setWorks={setWorks}
           inputSearch={inputSearch}
           works={works}
+          myRef={myRef}
         />
       </div>
     </>
