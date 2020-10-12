@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Navigation from './navigation/Navigation';
 import AboutApp from './about_app/AboutApp';
 import Favorites from "./favorites/Favorites";
