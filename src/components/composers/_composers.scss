@@ -165,10 +165,29 @@
 
     .composer--portrait {
         width: 70%;
+        margin: 0;
+        padding: 1rem;
+
+        img {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media #{$mobileLargeScreen}, #{$tableScreen} {
+    .composer--portrait {
+        width: 70%;
+        padding: 1rem;
 
         img {
             width: 95%;
             margin: 0 auto;
+            padding: 0;
         }
+    }
+
+    .composer--info {
+        margin-left: -3rem;
     }
 }
