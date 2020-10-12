@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, BrowserRouter as Router} from 'react-router-dom';
 
 const Navigation = () => {
     const [showNav, setShowNav] = useState(false);
