@@ -37,7 +37,7 @@ const Favorite = ({work}) => {
 
     return (
         <div className="favorite--work--box" key={work.id}>
-            <button onClick={removeWorkFromFavorites} className="btn--favorite--delete"><i className="fa fa-trash" /></button>
+            {/* <button onClick={removeWorkFromFavorites} className="btn--favorite--delete"><i className="fa fa-trash" /></button> */}
             <div className="img--box">
                 <div className="composer--img">
                     <img src={work.img}></img>

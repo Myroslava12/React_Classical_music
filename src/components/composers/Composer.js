@@ -15,14 +15,14 @@ const Composer = ({composer}) => {
             <div className="container--app">
                 <div className="composer--container">
                     {isVisible && <div className="hide--section"></div>}
-                    <div className="composer--info">
+                    <div className="composer--info" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <h2 className="composer--name">{composer.name}</h2>
                         <span className="composer--birth">{composer.birth} - {composer.death}</span>
                         <p className="composer--epoch">The era in which he created: <strong>{composer.epoch}</strong></p>
                         <button onClick={onClick} className="composer--btn">Search works</button>
                     </div>
                     <div className="composer--bg-img"></div>
-                    <div className="composer--portrait">
+                    <div className="composer--portrait" data-aos="zoom-in-up">
                         <img src={composer.img} />
                     </div>
                     {isVisible && <FormSearchWorks 

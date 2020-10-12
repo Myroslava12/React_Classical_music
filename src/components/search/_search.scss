@@ -59,6 +59,8 @@
         color: $fontColor;
         text-decoration: dotted;
         font-family: $fontRaleway;
+        opacity: 0;
+        animation: letter 1s forwards;
     }
 
     .letter--1::before {
@@ -71,48 +73,56 @@
         content: "L";
         top: -10%;
         left: -10%;
+        animation-delay: .2s;
     }
 
     .letter--3::before {
         content: "A";
         top: 10%;
         left: -5%;
+        animation-delay: .4s;
     }
 
     .letter--4::before {
         content: "S";
         top: 5%;
         left: 5%;
+        animation-delay: .6s;
     }
 
     .letter--5::before {
         content: "S";
         top: -10%;
         left: 15%;
+        animation-delay: .8s;
     }
 
     .letter--6::before {
         content: "I";
         top: -10%;
         left: 28%;
+        animation-delay: .9s;
     }
 
     .letter--7::before {
         content: "C";
         top: 15%;
         left: -5%;
+        animation-delay: 1s;
     }
 
     .letter--8::before {
         content: "A";
         top: -5%;
         left: 5%;
+        animation-delay: 1.2s;
     }
 
     .letter--9::before {
         content: "L";
         top: 15%;
         left: -5%;
+        animation-delay: 1.3s;
     }
 }
 
@@ -121,6 +131,8 @@
     font-size: 3rem;
     color: $darkColor;
     text-align: end;
+    opacity: 0;
+    animation: letter 1s 1.5s forwards;
 }
 
 .main--img {
@@ -129,6 +141,15 @@
     left: 0;
     bottom: 5%;
     width: 60%;
+}
+
+@keyframes letter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
