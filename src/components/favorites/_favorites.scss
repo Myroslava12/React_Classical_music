@@ -83,6 +83,7 @@
     align-items: flex-end;
     width: 60%;
     padding: 1rem 0;
+    height: 50px;
 
     .favorite--logo--title {
         color: $lightColor;
@@ -102,18 +103,22 @@
 
     .player--1 {
         height: 25px;
+        animation: player1 1.5s infinite;
     }
 
     .player--2 {
         height: 31px;
+        animation: player2 1.5s .4s infinite;
     }
 
     .player--3 {
         height: 39px;
+        animation: player3 1.5s .6s infinite;
     }
 
     .player--4 {
         height: 43px;
+        animation: player4 1.5s .2s infinite;
     }
 }
 
@@ -173,6 +178,52 @@
     i {
         font-size: 3rem;
         color: $fontColor;
+    }
+}
+
+@keyframes player1 {
+    0% {
+        height: 2px;
+    } 
+    50% {
+        height: 25px;
+    } 
+    100% {
+        height: 1px;
+    }
+}
+
+@keyframes player2 {
+    0% {
+        height: 4px;
+    } 
+    50% {
+        height: 31px;
+    } 
+    100% {
+        height: 3px;
+    }
+}
+@keyframes player3 {
+    0% {
+        height: 5px;
+    } 
+    50% {
+        height: 39px;
+    } 
+    100% {
+        height: 4px;
+    }
+}
+@keyframes player4 {
+    0% {
+        height: 6px;
+    } 
+    50% {
+        height: 43px;
+    } 
+    100% {
+        height: 5px;
     }
 }
 

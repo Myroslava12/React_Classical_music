@@ -46,7 +46,7 @@ function App() {
       <div className="dashboard--app">
         <div className="container--app container--search">
           <div className="header--app">
-            <a className="logo--box" href="/" data-aos="zoom-in">
+            <a className="logo--box" href="/">
               <img className="logo--img" src={logo}/>
               <span className="logo--text">ClassicalApp</span>
             </a>
