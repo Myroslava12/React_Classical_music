@@ -50,10 +50,17 @@
     width: 50%;
     font-size: 1rem;
     border-radius: 1rem;
+    margin-top: .5rem;
 
     &:focus {
         box-shadow: 0px 0px 4px $fontColor;
     }
+}
+
+.message--info {
+    font-family: $fontOpenSans;
+    color: $darkColor;
+    font-size: .7rem;
 }
 
 .btn--search--work {

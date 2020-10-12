@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getVideoFromYoutube } from "../../services/api";
 import Video from "../works/Video";
 import Loading from "../loading/Loading";
 import { scrollToRef } from "../../services/scroll";
+import { getFavoritesFromLocalStorage, setFavoritesToLocalStorage } from "../../services/favorites";
 
 const Favorite = ({work}) => {
     const [show, setShow] = useState(false);
@@ -28,8 +29,15 @@ const Favorite = ({work}) => {
         scrollToRef(myRef);
     }
 
+    const removeWorkFromFavorites = () => {
+        const favorites = getFavoritesFromLocalStorage();
+        const filteredFavorites = favorites.filter(el => el.id !== work.id);
+        setFavoritesToLocalStorage(filteredFavorites);
+    }
+
     return (
         <div className="favorite--work--box" key={work.id}>
+            <button onClick={removeWorkFromFavorites} className="btn--favorite--delete"><i className="fa fa-trash" /></button>
             <div className="img--box">
                 <div className="composer--img">
                     <img src={work.img}></img>

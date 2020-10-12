@@ -31,15 +31,21 @@ const Work = ({work, composerName, composerImg}) => {
 
     const addToFavorites = () => {
         const newFavorites = [...getFavoritesFromLocalStorage(), {...work, name: composerName, img: composerImg}];
+        if (isAdded) {
+            const filteredFavorites = newFavorites.filter(el => el.id !== work.id);
+            setFavoritesToLocalStorage(filteredFavorites);
+            setIsAdded(false);
+            return;
+        }
         setFavoritesToLocalStorage(newFavorites);
-        setIsAdded(true);
+        setIsAdded(!isAdded);
     }
 
     return (
         <li className="work--box">
             <p className="work--title">{work.title}</p>
             <div className="work--icons">
-                <button disabled={isAdded && true} onClick={addToFavorites} className="btn--add--work">{!isAdded ? <i className="fa fa-heart"></i> : <i className="fa fa-check"></i>}</button>
+                <button onClick={addToFavorites} className="btn--add--work">{!isAdded ? <i className="fa fa-heart"></i> : <i className="fa fa-check"></i>}</button>
                 <button onClick={showVideoFromYoutube} className="btn--yt--player">{isLoading && <Loading />}<i className="fa fa-youtube"></i></button>
             </div>
             {videoNotFound && <p className="work--not--found">Video not found</p>}

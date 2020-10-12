@@ -1,0 +1,61 @@
+.footer--contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer--title {
+    margin: 5rem 0;
+    font-family: $fontOpenSans;
+    line-height: 2,4rem;
+    font-size: 2rem;
+}
+
+.footer--info {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: $fontPoller;
+    margin-bottom: 2rem;
+}
+
+.footer--icon--box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.footer--link {
+    margin: 0 2rem;
+    color: $lightColor;
+    transition: .1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    i {
+        font-size: 3rem;
+    }
+}
+
+.footer--icon--gmail {
+    width: 100%;
+    margin: 4rem 0 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .fa {
+        margin-right: 2rem;
+        font-size: 2.5rem;
+        color: $lightColor;
+    }
+
+    .icon--gmail--info {
+        font-size: 1rem;
+        font-family: $fontOpenSans;
+    }
+}

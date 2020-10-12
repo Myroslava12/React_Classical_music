@@ -48,6 +48,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     width: auto;
     padding: 1rem 2rem;
     margin: 3rem 0 0 0;
@@ -155,6 +156,26 @@
     }
 }
 
+.btn--favorite--delete {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 5;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    transition: .1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    i {
+        font-size: 3rem;
+        color: $fontColor;
+    }
+}
+
 @media #{$tableScreen} {
     .img--box {
         .composer--img {
@@ -185,6 +206,7 @@
 
 @media #{$mobileLargeScreen} {
     .img--box {
+        margin-top: 4rem;
         .composer--img {
             width: 100%;
         }
@@ -212,6 +234,7 @@
 
     .img--box {
         width: 100%;
+        margin-top: 4rem;
 
         .composer--img {
             width: 60%;
