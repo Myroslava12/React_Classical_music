@@ -13,6 +13,7 @@ const Work = ({work, composerName, composerImg}) => {
     const [videoNotFound, setVideoNotFound] = useState(false);
 
     const myRef = useRef();
+    const myRefNotFound = useRef();
 
     const showVideoFromYoutube = async () => {
         setIsLoading(true);
@@ -20,6 +21,7 @@ const Work = ({work, composerName, composerImg}) => {
         setIsLoading(false);
         if (!video) {
             setVideoNotFound(true);
+            scrollToRef(myRefNotFound);
             return;
         }
         setVideoKey('');
@@ -43,12 +45,12 @@ const Work = ({work, composerName, composerImg}) => {
 
     return (
         <li className="work--box">
-            <p className="work--title">{work.title}</p>
+            <p onClick={showVideoFromYoutube} className="work--title">{work.title}</p>
             <div className="work--icons">
                 <button onClick={addToFavorites} className="btn--add--work">{!isAdded ? <i className="fa fa-heart"></i> : <i className="fa fa-check"></i>}</button>
                 <button onClick={showVideoFromYoutube} className="btn--yt--player">{isLoading && <Loading />}<i className="fa fa-youtube"></i></button>
             </div>
-            {videoNotFound && <p className="work--not--found">Video not found</p>}
+            {videoNotFound && <p ref={myRefNotFound} className="work--not--found">Video not found</p>}
             {show && <Video videoKey={videoKey} setShow={setShow} myRef={myRef} />}
         </li>
     )

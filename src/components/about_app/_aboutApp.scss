@@ -1,0 +1,67 @@
+.about--img--box {
+    position: relative;
+    width: 100%;
+}
+
+.about--img {
+    position: relative;
+    z-index: -1;
+}
+
+.about--img--clef {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: -1;
+}
+
+.about--img--line {
+    position: absolute;
+    z-index: -1;
+    left: 48%;
+}
+
+.line--1 {
+    top: 15%;
+}
+
+.line--2 {
+    top: 11%;
+}
+
+.line--3 {
+    top: 7%;
+}
+
+.line--4 {
+    top: 3%;
+}
+
+.line--5 {
+    top: -1%;
+}
+
+.about--title {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $fontColor;
+    line-height: 3.9rem;
+    font-family: $fontPoller;
+}
+
+.about--info--box {
+    padding: 1rem;
+    width: 100%;
+
+    .about--text {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-family: $fontOpenSans;
+        text-indent: 1.5rem;
+        margin: 1rem 0;
+        text-align: justify;
+    }
+}
