@@ -1,7 +1,7 @@
 import React from 'react';
 import Video from '../works/Video';
 
-const popularWorks = [
+const popularWorksData = [
     {
         id: 1,
         title: "Moonlight Sonata -  Piano Sonata No. 14",
@@ -94,11 +94,11 @@ const popularWorks = [
     }
 ]
 
-const Video = () => {
+const PopularWorks = () => {
 
     return (
         <div className="about--video--box">
-            {popularWorks.map(work => {
+            {popularWorksData.map(work => {
                 return <div className="popular--box" key={work.id} id={work.id}>
                     <iframe className="popular--video" src={work.link}></iframe>
                     <p className="popular--title">{work.title}</p>
@@ -115,4 +115,4 @@ const Video = () => {
     )
 }
 
-export default Video;
+export default PopularWorks;

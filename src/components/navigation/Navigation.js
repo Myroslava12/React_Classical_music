@@ -12,8 +12,8 @@ const Navigation = () => {
         <nav>
             <ul className="nav--app">
                 <li><NavLink exact to="/" activeClassName="active--link">Home</NavLink></li>
-                <li><NavLink to="/about/app" activeClassName="active--link">About App</NavLink></li>
-                <li><NavLink to="/about/favorites" activeClassName="active--link">Favorites</NavLink></li>
+                <li><NavLink to="/about" activeClassName="active--link">About App</NavLink></li>
+                <li><NavLink to="/favorites" activeClassName="active--link">Favorites</NavLink></li>
                 <li><NavLink to="/contact" activeClassName="active--link">Contact</NavLink></li>
             </ul>
             <div className="navbar--app">
@@ -22,8 +22,8 @@ const Navigation = () => {
             </button>
             {showNav && <ul className="mobile--nav--app">
                 <li><NavLink onClick={showNavbar} exact to="/" activeClassName="active--link">Home</NavLink></li>
-                <li><NavLink onClick={showNavbar} to="/about/app" activeClassName="active--link">About App</NavLink></li>
-                <li><NavLink onClick={showNavbar} to="/about/favorites" activeClassName="active--link">Favorites</NavLink></li>
+                <li><NavLink onClick={showNavbar} to="/about" activeClassName="active--link">About App</NavLink></li>
+                <li><NavLink onClick={showNavbar} to="/favorites" activeClassName="active--link">Favorites</NavLink></li>
                 <li><NavLink onClick={showNavbar} to="/contact" activeClassName="active--link">Contact</NavLink></li>
             </ul>}
             </div>

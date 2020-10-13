@@ -54,8 +54,8 @@ function App() {
               <Navigation />
               <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route path="/about/app" component={AboutApp}/>
-                <Route path="/about/favorites" component={Favorites}/>
+                <Route path="/about" component={AboutApp}/>
+                <Route path="/favorites" component={Favorites}/>
                 <Route path="/contact" component={Footer}/>
               </Switch>
             </Router>

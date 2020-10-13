@@ -1,13 +1,14 @@
 import React from 'react';
 import line from "../../images/Vector1.jpg";
 import clef from "../../images/clef.png";
-import shortLine from "../../images/line.png"
+import shortLine from "../../images/line.png";
+import PopularWorks from "./PopularWorks";
 
 
 const AboutApp = () => {
 
     return (
-        <div className="main--app">
+        <div className="about--section">
             <div className="about--img--box">
                 <img className="about--img" src={line} />
                 <img className="about--img--clef" src={clef} />
@@ -29,6 +30,7 @@ const AboutApp = () => {
                 <p className="about--text">You will be surprised how many works you already know when you hear, but you do not know who the author is.</p>
                 <p className="about--text about--list--text">Here are some of the world's most famous classical music melodies and everything you need to know about them.</p>
             </div>
+            <PopularWorks />
         </div>
     )
 };

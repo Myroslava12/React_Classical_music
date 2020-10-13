@@ -5,7 +5,7 @@ import Loading from "../loading/Loading";
 import { scrollToRef } from "../../services/scroll";
 import { getFavoritesFromLocalStorage, setFavoritesToLocalStorage } from "../../services/favorites";
 
-const Favorite = ({work}) => {
+const Favorite = ({work, onRemove}) => {
     const [show, setShow] = useState(false);
     const [videoKey, setVideoKey] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -29,15 +29,9 @@ const Favorite = ({work}) => {
         scrollToRef(myRef);
     }
 
-    const removeWorkFromFavorites = () => {
-        const favorites = getFavoritesFromLocalStorage();
-        const filteredFavorites = favorites.filter(el => el.id !== work.id);
-        setFavoritesToLocalStorage(filteredFavorites);
-    }
-
     return (
         <div className="favorite--work--box" key={work.id}>
-            {/* <button onClick={removeWorkFromFavorites} className="btn--favorite--delete"><i className="fa fa-trash" /></button> */}
+            <button onClick={onRemove} className="btn--favorite--delete"><i className="fa fa-trash" /></button>
             <div className="img--box">
                 <div className="composer--img">
                     <img src={work.img}></img>
