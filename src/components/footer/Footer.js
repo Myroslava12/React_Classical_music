@@ -31,7 +31,7 @@ const Footer = () => {
                         </div>
                         <div className="info--box--icon">
                             <i className="fa fa-globe" />
-                            <a href="https://ms-classical-app.herokuapp.com/#/">https://ms-classical-app.herokuapp.com</a>
+                            <a className="info--box--text" href="https://ms-classical-app.herokuapp.com/#/">ms-classical-app.com</a>
                         </div>
                     </div>
                 </div>
