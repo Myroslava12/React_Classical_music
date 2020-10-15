@@ -3,7 +3,7 @@ import { getVideoFromYoutube } from "../../services/api";
 import Video from "../works/Video";
 import Loading from "../loading/Loading";
 import { scrollToRef } from "../../services/scroll";
-import { getFavoritesFromLocalStorage, setFavoritesToLocalStorage } from "../../services/favorites";
+import AOS from 'aos';
 
 const Favorite = ({work, onRemove}) => {
     const [show, setShow] = useState(false);
@@ -13,6 +13,12 @@ const Favorite = ({work, onRemove}) => {
 
     const myRef = useRef();
     const myRefNotFound = useRef();
+
+    useEffect(() => {
+        AOS.init({
+          duration : 500
+        });
+    }, []);
 
     const showFavoriteVideoFromYoutube = async () => {
         setIsLoading(true);
@@ -30,10 +36,10 @@ const Favorite = ({work, onRemove}) => {
     }
 
     return (
-        <div className="favorite--work--box" key={work.id}>
-            <button onClick={onRemove} className="btn--favorite--delete"><i className="fa fa-trash" /></button>
+        <div className="favorite--work--box" key={work.id} data-aos="fade-up">
+            <button onClick={onRemove} className="btn--favorite--delete" data-aos="flip-right"><i className="fa fa-trash" /></button>
             <div className="img--box">
-                <div className="composer--img">
+                <div className="composer--img" data-aos="zoom-in">
                     <img src={work.img}></img>
                 </div>
                 <div className="favorite--logo">
@@ -51,7 +57,7 @@ const Favorite = ({work, onRemove}) => {
                     <span className="player--logo player--3"></span>
                 </div>
             </div>
-            <div className="favorite--composer--info">
+            <div className="favorite--composer--info" data-aos="fade-up" data-aos-duration="1200">
                 <p className="favorite--composer--name">{work.name}</p>
                 <p className="favorite--work--title">{work.title}</p>
                 <div className="box--loading">{isLoading && <Loading />}</div>

@@ -17,7 +17,7 @@ const Composer = ({composer}) => {
                     {isVisible && <div className="hide--section"></div>}
                     <div className="composer--info" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <h2 className="composer--name">{composer.name}</h2>
-                        <span className="composer--birth">{composer.birth} - {composer.death}</span>
+                        <span className="composer--birth">{composer.birth.substring(0, 4)} - {composer.death.substring(0, 4)}</span>
                         <p className="composer--epoch">The era in which he created: <strong>{composer.epoch}</strong></p>
                         <button onClick={onClick} className="composer--btn">Search works</button>
                     </div>

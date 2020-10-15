@@ -8,6 +8,8 @@
     width: 100%;
     text-align: center;
     padding-top: 8%;
+    z-index: 10;
+    position: relative;
 
     .title--letter {
         font-family: $fontPoller;

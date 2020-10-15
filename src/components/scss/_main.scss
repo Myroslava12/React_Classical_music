@@ -31,6 +31,11 @@ html {
     flex-basis: 20%;
     position: relative;
     color: $darkColor;
+    transition: .1s;
+
+    &:hover {
+        transform: scale(1.01);
+    }
 
     .logo--img {
         object-fit: contain;

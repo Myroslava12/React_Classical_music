@@ -42,9 +42,9 @@ const FormSearchWorks  = ({setWorks, setIsVisible, composerID, myRef}) => {
             <div className="form--icon--hide"><i className="fa fa-times" onClick={hideSection}></i></div>
             <p className="search--work--title">What works do you want to find?</p>
             {inputError && <p className="search--title--error">Field value cannot be empty</p>}
-            {error && <p className="search--title--error">No works found</p>}
+            {error && <p className="search--title--error">Oops, can't find the work with this name...</p>}
             <small className="message--info">To see all the works, enter "all"</small>
-            <input className="input--search--work" type="text" value={nameWork} placeholder="e.g. Sonata or preludy..." onChange={onChange} />
+            <input className="input--search--work" type="text" value={nameWork} placeholder="e.g. Sonata or prelude..." onChange={onChange} />
             <button type="submit" className="btn--search--work">Show work</button>
         </form>
     );

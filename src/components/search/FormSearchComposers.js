@@ -31,6 +31,7 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
             scrollToRef(myRef);
         } else {
             setError(true);
+            setIsLoading(false);
         }  
     }
 
@@ -40,7 +41,6 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
         <form onSubmit={handleSubmit} className="form--app" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <h1 className="form--title">WHAT YOU DON’T KNOW ABOUT YOUR FAVES COMPOSER?</h1>
             <div className="box--loading">{isLoading && <Loading />}</div>
-            {error && <p className="search--title--error">No composers found</p>}
             <div className="form--box">
                 <input 
                     value={inputSearch} 
@@ -50,6 +50,7 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
                 />
                 <button type="submit" className="btn--form"><i className="fa fa-search"></i></button>
             </div>
+            {error && <p className="search--title--error">Oops, can't find the composer with this name...</p>}
         </form>
     )
 }
