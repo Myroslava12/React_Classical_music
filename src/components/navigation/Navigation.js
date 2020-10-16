@@ -6,6 +6,7 @@ const Navigation = () => {
 
     const showNavbar = () => {
         setShowNav(!showNav);
+        document.documentElement.style.overflow = showNav ? '' : 'hidden';
     };
 
     return (
