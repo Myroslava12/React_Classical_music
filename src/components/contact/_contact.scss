@@ -310,3 +310,10 @@
         }
     }
 }
+
+@media #{$laptopScreen} {
+    .footer--icons {
+        bottom: 40%;
+        right: 70%;
+    }
+}

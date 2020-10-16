@@ -1,7 +1,4 @@
 import React from 'react';
-import line from "../../images/Vector1.jpg";
-import clef from "../../images/clef.png";
-import shortLine from "../../images/line.png";
 import PopularWorks from "./PopularWorks";
 
 
@@ -10,14 +7,32 @@ const AboutApp = () => {
     return (
         <div className="about--section">
             <div className="about--img--box">
-                <img className="about--img" src={line} />
-                <img className="about--img--clef" src={clef} />
-                <img className="about--img--line line--1" src={shortLine} />
-                <img className="about--img--line line--2" src={shortLine} />
-                <img className="about--img--line line--3" src={shortLine} />
-                <img className="about--img--line line--4" src={shortLine} />
-                <img className="about--img--line line--5" src={shortLine} />
-                <h1 className="about--title">ClassicalApp</h1>
+                <div className="house--box">
+                    <span className="house--line house--line-1"></span>
+                    <span className="house--line house--line-2"></span>
+                    <span className="house--line house--line-3"></span>
+                    <span className="house--line house--line-4"></span>
+                    <span className="house--line house--line-5"></span>
+                    <span className="house--line house--line-6"></span>
+                    <span className="house--line house--line-7"></span>
+                    <span className="house--line house--line-8"></span>
+                    <span className="house--line house--line-9"></span>
+                    <span className="house--line house--line-10"></span>
+                    <span className="house--line house--line-11"></span>
+                    <span className="house--line house--line-12"></span>
+                    <span className="house--line house--line-13"></span>
+                    <span className="house--line house--line-14"></span>
+                    <span className="house--line house--line-15"></span>
+                    <span className="house--line house--line-16"></span>
+                    <span className="house--line house--line-17"></span>
+                    <span className="house--line house--line-18"></span>
+                    <span className="house--line house--line-19"></span>
+                    <span className="house--line house--line-20"></span>
+                    <span className="house--line house--line-21"></span>
+                    <span className="house--line house--line-22"></span>
+                    <span className="house--line house--line-23"></span>
+                    <span className="house--line house--line-24"></span>
+                </div>
             </div>
             <div className="about--info--box">
                 <p className="about--text">Music has developed over the centuries. It has changed over the years. 
