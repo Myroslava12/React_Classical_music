@@ -1,11 +1,12 @@
 html {
     font-size: 17px;
+    overflow: hidden;
 }
 
 .dashboard--app {
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     background: linear-gradient(180deg, rgba(210, 182, 178, 0.5) 1.59%, rgba(81, 70, 125, 0) 75.41%), linear-gradient(0deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74));
 }
 

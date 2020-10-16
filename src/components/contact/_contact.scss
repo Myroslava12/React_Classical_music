@@ -86,13 +86,13 @@
 }
 
 .footer--circle {
-    position: absolute;
+    position: fixed;
     width: 35rem;
     height: 35rem;
     border-radius: 50%;
     background-color: $fontColor;
     bottom: -15%;
-    right: -15%;
+    right: -10%;
     z-index: 2;
     opacity: 0;
     animation: icon 1s forwards;
@@ -232,8 +232,8 @@
     }
 
     .footer--circle {
-        bottom: -20%;
-        right: -20%;
+        bottom: -17%;
+        right: -17%;
     }
 }
 
@@ -248,8 +248,8 @@
     }
 
     .footer--circle {
-        bottom: -20%;
-        right: -20%;
+        bottom: -22%;
+        right: -16%;
         width: 30rem;
         height: 30rem;
 
@@ -269,7 +269,7 @@
     }
 
     .footer--icons {
-        bottom: 40%;
+        bottom: 45%;
         right: 75%;
     }
 

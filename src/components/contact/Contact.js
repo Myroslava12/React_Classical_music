@@ -3,7 +3,7 @@ import myImg from "../../images/mira.jpg";
 import AOS from 'aos';
 
 
-const Footer = () => {
+const Contact = () => {
 
     useEffect(() => {
         AOS.init({
@@ -53,4 +53,4 @@ const Footer = () => {
     )
 };
 
-export default Footer;
+export default Contact;

@@ -4,7 +4,7 @@ import Navigation from './navigation/Navigation';
 import AboutApp from './about_app/AboutApp';
 import Favorites from "./favorites/Favorites";
 import Search from './search/Search';
-import Footer from './footer/Footer';
+import Contact from './contact/Contact';
 import Composers from './composers/Composers';
 import './App.scss';
 import logo from '../images/clef.jpg';
@@ -56,7 +56,7 @@ function App() {
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={AboutApp}/>
                 <Route path="/favorites" component={Favorites}/>
-                <Route path="/contact" component={Footer}/>
+                <Route path="/contact" component={Contact}/>
               </Switch>
             </Router>
           </div>
