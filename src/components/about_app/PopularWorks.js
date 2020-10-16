@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactPlayer from 'react-player/youtube';
 
 const popularWorksData = [
     {
@@ -95,30 +96,51 @@ const popularWorksData = [
 
 const PopularWorks = () => {
     const [counter, setCounter] = useState(1);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const ref = React.useRef();
 
     const showNextVideo = () => {
+        setIsPlaying(false);
         if (counter < popularWorksData.length) {
             setCounter(prev => prev + 1);
         } else {
             setCounter(1);
         }
-        console.log(counter);
     }
 
     const showPrevVideo = () => {
+        setIsPlaying(false);
         if (counter > 1) {
             setCounter(prev => prev - 1);
         } else {
             setCounter(popularWorksData.length);
         }
-        console.log(counter);
+    }
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    }
+
+    const handlePause = () => {
+        setIsPlaying(false);
     }
 
     return (
         <div className="about--video--box">
             {popularWorksData.map(work => {
                 return <div className={(counter === work.id) ? "popular--box visibility" : "popular--box"} key={work.id} id={counter}>
-                    <iframe className="popular--video" src={work.link} frameborder="0"></iframe>
+                    <div className="popular--video">
+                        <ReactPlayer
+                            onPlay={handlePlay}
+                            onPause={handlePause}
+                            url={work.link}
+                            width='100%'
+                            height='100%'
+                            controls
+                            playing={counter === work.id && isPlaying}
+                            ref={ref}
+                        />
+                    </div>
                     <p className="popular--title">{work.title}</p>
                     <p className="popular--composer--name">{work.composer}</p>
                     <button onClick={showPrevVideo} className="popular--arrow arrow--left">
