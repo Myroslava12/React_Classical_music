@@ -11,7 +11,7 @@ const Favorite = ({work, onRemove}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [videoNotFound, setVideoNotFound] = useState(false);
 
-    const myRef = useRef();
+    const myFavRef = useRef();
     const myRefNotFound = useRef();
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const Favorite = ({work, onRemove}) => {
         }
         setVideoKey(video.id.videoId);
         setShow(true);
-        scrollToRef(myRef);
+        scrollToRef(myFavRef);
     }
 
     return (
@@ -64,7 +64,7 @@ const Favorite = ({work, onRemove}) => {
                 <button onClick={showFavoriteVideoFromYoutube} className="favorite--btn">Listen work</button>
             </div>
             {videoNotFound && <p ref={myRefNotFound} className="work--not--found">Video not found</p>}
-            {show && <Video videoKey={videoKey} setShow={setShow} myFavRef={myRef} />}
+            {show && <Video videoKey={videoKey} setShow={setShow} myFavRef={myFavRef} />}
         </div>
     )
 }
