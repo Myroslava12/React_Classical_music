@@ -22,8 +22,8 @@ Additionally, you can find some of the world’s most famous classical music mel
 
 To run this project, install it locally using npm:
 - Clone this repo
-- npm install
-- npm start
+- `npm install`
+- `npm start`
 
 ## Functionality overview
 
@@ -36,6 +36,29 @@ To run this project, install it locally using npm:
     - delete composer from favorites list
 
 
+
+### Below you can see the screenshots of the application
+
+#### Main dashboard
 ![Main dashboard](/src/images/screen1.png?raw=true "Optional Title")
+
+#### Result - got the composer
+![Main](/src/images/screen2.png?raw=true "Optional Title")
+
+
+#### About App
+
+![about App](/src/images/screen3.png)
+
+#### Popular classical works 
+
+![popular](/src/images/screen5.png)
+
+#### List of favorite composers
+
+![favorites](/src/images/screen4.png)
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
