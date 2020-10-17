@@ -118,3 +118,13 @@ html {
         }
     }
 }
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 19px;
+    }
+
+    .container--app {
+        max-width: 1550px;
+    }
+}

@@ -18,42 +18,7 @@
         position: relative;
         text-transform: uppercase;
         z-index: 1;
-    }
-
-    .letter--1 {
-        font-size: 12rem;
-    }
-
-    .letter--2 {
-        font-size: 11rem;
-    }
-
-    .letter--3 {
-        font-size: 10.8rem;
-    }
-
-    .letter--4 {
-        font-size: 10.6rem;
-    }
-
-    .letter--5 {
-        font-size: 10.4rem;
-    }
-
-    .letter--6 {
-        font-size: 10.3rem;
-    }
-
-    .letter--7 {
         font-size: 10rem;
-    }
-
-    .letter--8 {
-        font-size: 9.8rem;
-    }
-
-    .letter--9 {
-        font-size: 9.5rem;
     }
 
     .title--letter::before {
@@ -246,61 +211,33 @@
 
 @media #{$tableScreen} {
     .main--box {
-        padding-top: 4%;
+        padding-top: 4rem;
 
         .title--letter {
             font-size: 7rem;
         }
     }
     .main--img {
-        width: 50%;
+        width: 40%;
+        left: -7%;
+        bottom: 5%;
     }
 }
 
 @media #{$laptopScreen} {
     .main--box {
-        padding-top: 4%;
+        padding-top: 6rem;
 
-        .letter--1 {
-            font-size: 10rem;
-        }
-    
-        .letter--2 {
-            font-size: 9.6rem;
-        }
-    
-        .letter--3 {
-            font-size: 9.3rem;
-        }
-    
-        .letter--4 {
+        .title--letter {
             font-size: 9rem;
-        }
-    
-        .letter--5 {
-            font-size: 8.7rem;
-        }
-    
-        .letter--6 {
-            font-size: 8.4rem;
-        }
-    
-        .letter--7 {
-            font-size: 8rem;
-        }
-    
-        .letter--8 {
-            font-size: 7.7rem;
-        }
-    
-        .letter--9 {
-            font-size: 7.4rem;
+            width: 100%;
         }
     }
 
     .main--img {
         width: 50%;
         left: -5%;
+        bottom: 0%;
     }
 }
 
@@ -313,5 +250,13 @@
      .main--box {
          padding-top: 17%;
      }
+}
+
+@media (min-width: 1600px) {
+    .main--img {
+        width: 72%;
+        left: -10%;
+        bottom: 0;
+    }
 }
 
