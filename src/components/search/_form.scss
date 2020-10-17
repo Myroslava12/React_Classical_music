@@ -71,9 +71,9 @@
 
 .list--tag--name {
     text-align: start;
-    margin: .5rem 0;
     font-family: $fontOpenSans;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
     cursor: pointer;
 }
 
@@ -96,6 +96,10 @@
 
     .form--title {
         font-size: 1.5rem;
+    }
+
+    .list--tag--name {
+        font-size: 1.6rem;
     }
 }
 
