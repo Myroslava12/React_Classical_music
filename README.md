@@ -36,6 +36,6 @@ To run this project, install it locally using npm:
     - delete composer from favorites list
 
 
-[Home](/src/images/screen1.png)
+![Main dashboard](/src/images/screen1.png?raw=true "Optional Title")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
