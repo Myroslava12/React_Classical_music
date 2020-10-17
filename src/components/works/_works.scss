@@ -211,6 +211,14 @@
     .form--search--works  {
         width: 80%;
     }
+
+    .input--search--work {
+        width: 65%;
+    }
+
+    .message--info {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 450px) {
@@ -230,17 +238,33 @@
             margin: 1rem 0 1.5rem 0;
         }
     }
+
+    .input--search--work {
+        width: 75%;
+    }
 }
 
 @media #{$tableScreen} {
     .form--search--works {
         width: 70%;
+
+        .btn--search--work {
+            margin: 2rem 0;
+        }
     }
 
     .work--box {
         .work--title {
             flex-basis: 60%;
         }
+    }
+
+    .input--search--work {
+        width: 60%;
+    }
+
+    .message--info {
+        font-size: 1rem;
     }
 }
 
@@ -254,6 +278,22 @@
         .work--video--hide {
             right: 5%;
         }
+    }
+
+    .form--search--works {
+        width: 60%;
+
+        .btn--search--work {
+            margin: 2rem 0;
+        }
+    }
+
+    .input--search--work {
+        width: 65%;
+    }
+
+    .message--info {
+        font-size: 1rem;
     }
 }
 
