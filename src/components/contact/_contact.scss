@@ -317,3 +317,12 @@
         right: 70%;
     }
 }
+
+@media (max-width: 1024px) {
+    .footer--contact {
+        overflow: hidden;
+    }
+    .footer--circle {
+        position: absolute;
+    }
+}

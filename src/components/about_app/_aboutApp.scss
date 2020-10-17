@@ -53,17 +53,17 @@
 }
 
 .house--line-5 {
-    height: 85%;
+    height: 80%;
     align-self: flex-end;
 }
 
 .house--line-6 {
-    height: 88%;
+    height: 82%;
     align-self: flex-end;
 }
 
 .house--line-7 {
-    height: 90%;
+    height: 85%;
     align-self: flex-end;
 }
 
@@ -83,27 +83,27 @@
 }
 
 .house--line-11 {
-    height: 60%;
-    margin-top: 5%;
-    align-self: flex-start;
+    height: 62%;
+    margin-bottom: 18%;
+    align-self: flex-end;
 }
 
 .house--line-12 {
-    height: 64%;
-    margin-top: 3%;
-    align-self: flex-start;
+    height: 65%;
+    margin-bottom: 18%;
+    align-self: flex-end;
 }
 
 .house--line-13 {
-    height: 68%;
-    margin-top: 1%;
-    align-self: flex-start;
+    height: 70%;
+    margin-bottom: 18%;
+    align-self: flex-end;
 }
 
 .house--line-14 {
     height: 57%;
-    margin-top: 6%;
-    align-self: flex-start;
+    margin-bottom: 18%;
+    align-self: flex-end;
 }
 
 .house--line-15 {
@@ -389,4 +389,21 @@
     .arrow--right {
         right: 1%; 
      }
+}
+
+@media #{$mobileScreen} {
+    .about--img--box {
+
+        .house--line {
+            margin-bottom: 1.6rem;
+        }
+
+        .house--line-14, .house--line-13, .house--line-12, .house--line-11 {
+            margin-bottom: 6rem;
+        }
+    }
+
+    .about--title {
+        font-size: 4rem;
+    }
 }
