@@ -34,3 +34,15 @@ export const getVideoFromYoutube = async (name, title) => {
         return;
     }
 }
+
+export const autocomplete = async () => {
+    const urlAPI = `https://api.openopus.org/composer/list/search/.json`;
+
+    try {
+        const response = await fetch(urlAPI);
+        const result = await response.json();
+        return (result.status.success === "true") ? result.composers.map(composer => composer.complete_name) : [];
+    } catch (err) {
+        return err;
+    }
+}

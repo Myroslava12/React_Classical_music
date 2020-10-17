@@ -57,6 +57,26 @@
     justify-content: center;
 }
 
+.list--tags {
+    height: 9rem;
+    width: 500px;
+    margin: 0rem auto 0 auto;
+    padding: 1rem;
+    overflow: auto;
+    color: $lightColor;
+    border-radius: 1rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.list--tag--name {
+    text-align: start;
+    margin: .5rem 0;
+    font-family: $fontOpenSans;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 @media #{$mobileScreen}, #{$mobileLargeScreen} {
     .form--app {
         top: 30%;
@@ -70,13 +90,17 @@
         font-size: 1.4rem;
     }
 
+    .list--tags {
+        width: 60%;
+    }
+
     .form--title {
         font-size: 1.5rem;
     }
 }
 
 @media (max-width: 420px) {
-    .input--form {
+    .input--form, .list--tags {
         width: 80%;
     }
 }
@@ -94,7 +118,7 @@
         font-size: 1rem;
     }
 
-    .input--form {
+    .input--form, .list--tags {
         width: 85%;
     }
 }

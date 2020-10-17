@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
-import {getComposersByName} from '../../services/api';
+import {getComposersByName, autocomplete} from '../../services/api';
 import Loading from '../loading/Loading';
 import {scrollToRef} from "../../services/scroll";
+import AutoComplete from './Autocomplete';
 
 const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWorks, myRef}) => {
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [composersName, setComposersName] = useState([]);
+
+    const listIsVisible = (composersName.length !== 0 && inputSearch.length !== 0);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,7 +39,17 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
         }  
     }
 
-    const onChange = (e) => setInputSearch(e.target.value);
+    const onChange = async (e) => {
+        setInputSearch(e.target.value);
+        if (inputSearch.length > 0) {
+            const composersName = await autocomplete();
+            const filteredComposerName = composersName.filter(name => {
+                const lowerLetters = name.toLowerCase();
+                return lowerLetters.indexOf(inputSearch.toLowerCase()) > -1
+            });
+            setComposersName(filteredComposerName);
+        }
+    };
 
     return (
         <form onSubmit={handleSubmit} className="form--app" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
@@ -51,6 +65,11 @@ const FormSearchComposers = ({setComposers, inputSearch, setInputSearch, setWork
                 <button type="submit" className="btn--form"><i className="fa fa-search"></i></button>
             </div>
             {error && <p className="search--title--error">Oops, can't find the composer with this name...</p>}
+            {listIsVisible && <ul className="list--tags">
+                {composersName.map((name, id) => {
+                    return <AutoComplete key={id} name={name} setInputSearch={setInputSearch} setComposersName={setComposersName} />
+                })}
+            </ul>}
         </form>
     )
 }
