@@ -68,22 +68,22 @@
 }
 
 .house--line-8 {
-    height: 67%;
+    height: 69%;
     align-self: flex-end;
 }
 
 .house--line-9 {
-    height: 71%;
+    height: 75%;
     align-self: flex-end;
 }
 
 .house--line-10 {
-    height: 80%;
+    height: 82%;
     align-self: flex-end;
 }
 
 .house--line-11 {
-    height: 62%;
+    height: 60%;
     margin-bottom: 18%;
     align-self: flex-end;
 }
@@ -260,18 +260,23 @@
 }
 
 .about--info--box {
+    margin-top: 2rem;
     padding: 1rem;
     width: 100%;
 
     .about--text {
         font-size: 1.2rem;
-        line-height: 1.6rem;
+        line-height: 1.8rem;
         color: $lightColor;
         font-family: $fontOpenSans;
-        text-indent: 1.5rem;
         margin: 1rem auto;
         width: 80%;
-        text-align: justify;
+        text-align: center;
+
+        strong {
+            font-style: italic;
+            font-weight: bold;
+        }
     }
 }
 
