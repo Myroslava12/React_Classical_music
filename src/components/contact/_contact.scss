@@ -317,3 +317,22 @@
         right: 70%;
     }
 }
+
+@media (min-width: 1700px) {
+    .footer--circle {
+        width: 50rem;
+        height: 50rem;
+
+        &::after {
+            width: 55rem;
+            height: 55rem;
+            right: -4%;
+            bottom: -4%;
+        }
+
+        &::before {
+            width: 65rem;
+            height: 65rem;
+        }
+    }
+}
