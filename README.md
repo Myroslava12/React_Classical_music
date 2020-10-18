@@ -1,4 +1,6 @@
-## **ClassicalApp** - web application created for classical music lovers 🎼
+# ClassicalApp
+
+**ClassicalApp** - web application created for classical music lovers 🎼
 
 You can find your favorite composers or discover the world of classical music for yourself🎶🎵
 
